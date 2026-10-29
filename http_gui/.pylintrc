@@ -1,0 +1,11 @@
+[MAIN]
+ignore=__pycache__
+persistent=no
+
+[MESSAGES CONTROL]
+# Tk/ttk widgets inherit through framework-controlled class hierarchies, so the
+# number of ancestors is not a design choice made by this project.
+disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,too-few-public-methods,broad-exception-caught,invalid-name,too-many-instance-attributes,too-many-locals,too-many-branches,too-many-statements,duplicate-code,too-many-ancestors
+
+[FORMAT]
+max-line-length=130

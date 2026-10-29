@@ -1,0 +1,49 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface HttpParser
+interface HttpSerializer
+
+class Url
+class Request
+class Response
+class Parser
+class Serializer
+class Socket
+class TcpClient
+class TcpServer
+class HttpClient
+class HttpError
+class Router
+class HttpServer
+class GuiQueueLogHandler
+class App
+class ClientTab
+class ServerTab
+class HeaderTable
+class LogTable
+
+HttpParser <|.. Parser
+HttpSerializer <|.. Serializer
+HttpClient --> Url
+HttpClient --> Request
+HttpClient --> Response
+HttpClient --> TcpClient
+HttpClient --> Parser
+HttpClient --> Serializer
+HttpClient ..> HttpError
+TcpClient --> Socket
+HttpServer --> TcpServer
+HttpServer --> Router
+HttpServer --> Parser
+HttpServer --> Serializer
+HttpServer --> GuiQueueLogHandler
+Router --> Request
+Router --> Response
+App *-- ClientTab
+App *-- ServerTab
+ClientTab --> HttpClient
+ClientTab *-- HeaderTable
+ServerTab --> HttpServer
+ServerTab *-- LogTable
+@enduml
